@@ -86,7 +86,9 @@ AcceptEnv LANG LC_*
 UsePAM yes
 
 # Configuration of the SFTP
-Subsystem sftp internal-sftp
-       Match group ftp
-       ChrootDirectory /home/%u
-       AllowTCPForwarding yes
+ Subsystem sftp internal-sftp
+
+ Match Group sftp
+        ChrootDirectory /server
+        ForceCommand internal-sftp
+        AllowTCPForwarding yes
