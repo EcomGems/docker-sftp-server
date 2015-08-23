@@ -4,4 +4,10 @@
 /docker-configuration.sh
 
 # Launching service
-/usr/sbin/sshd -D
+service ssh start
+
+# Loop
+echo "Ready."
+while [ true ]; do
+  sleep 600
+done
