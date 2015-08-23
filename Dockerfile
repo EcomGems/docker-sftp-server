@@ -30,6 +30,9 @@ RUN addgroup sftp
 ENV USERNAME username
 ENV PASSWORD password
 
+# Volume
+VOLUME /server/data
+
 # Ports
 EXPOSE 22
 CMD /docker-entrypoint.sh
