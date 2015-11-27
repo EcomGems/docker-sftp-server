@@ -5,11 +5,14 @@ MAINTAINER Louis Fradin <louis.fradin@gmail.com>
 RUN apt-get update && apt-get upgrade -y
 
 # Install requirements
+RUN apt-get install -y rsyslog
 RUN apt-get install -y openssh-server
 RUN apt-get install whois -y
+RUN apt-get install fail2ban -y
 
 # Copy configurations
 COPY configurations/sshd_config /etc/ssh/sshd_config
+COPY configurations/jail.conf /etc/fail2ban/jail.conf
 
 # Configure some directories
 RUN mkdir /server

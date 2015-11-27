@@ -4,10 +4,9 @@
 /docker-configuration.sh
 
 # Launching service
+service rsyslog start
 service ssh start
+service fail2ban start 
 
 # Loop
-echo "Ready."
-while [ true ]; do
-  sleep 600
-done
+tail -f /var/log/auth.log
