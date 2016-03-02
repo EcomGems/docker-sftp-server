@@ -16,13 +16,13 @@ Start your image with minimum arguments :
 
 With access to server's data :
 
-    docker run -d -p 22:22 -v /path/in/host:/server/data -e USERNAME=username -e PASSWORD=password lerenn/sftp-server
+    docker run -d -p 22:22 -v /path/in/host:/var/www/public -e USERNAME=username -e PASSWORD=password lerenn/sftp-server
 
 ## Arguments
 
 ### Volumes
 
-* **/server/data**: Directory containing data accessible by SFTP.
+* **/var/www/public**: Directory containing data accessible by SFTP.
 
 ### Environment variables
 
